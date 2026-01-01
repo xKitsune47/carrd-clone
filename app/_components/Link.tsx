@@ -1,36 +1,27 @@
 import React from "react";
 
 type Props = {
-  accent?: string;
-  background?: string;
-  border?: string;
-  card?: string;
-  primary?: string;
-  secondary?: string;
+  theme: string;
+  text?: string;
+  url?: string;
 };
 
-const Link = ({
-  accent,
-  background,
-  border,
-  card,
-  primary,
-  secondary,
-}: Props) => {
+const baseStyles = "px-8 py-3 rounded-full border border-2 font-medium";
+
+const Link = ({ theme }: Props) => {
   return (
-    <div className={`bg-${accent} border-${border}`}>
+    <div
+      className={`${baseStyles}
+        ${theme === "soft-neutral" && "bg-slate-100 border-slate-200"}
+        ${theme === "sage" && "bg-stone-100 border-slate-200"}
+        ${theme === "dark" && "bg-slate-800 border-slate-700"}
+        ${theme === "pastel-blue" && "bg-sky-100 border-indigo-200"}
+        ${theme === "soft-pink" && "bg-rose-100 border-rose-200"}
+        ${theme === "warm-mono" && "bg-amber-100 border-amber-200"}
+        `}>
       Lorem ipsum dolor sit amet
     </div>
   );
 };
 
 export default Link;
-
-// {
-//     "background"?: "slate-900",
-//     "card"?: "slate-800",
-//     "primary"?: "slate-50",
-//     "secondary"?: "slate-400",
-//     "accent"?: "sky-400",
-//     "border"?: "slate-700"
-// }

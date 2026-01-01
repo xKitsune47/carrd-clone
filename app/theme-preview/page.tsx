@@ -8,10 +8,6 @@ const page = () => {
   const { themes, loading, error } = useThemes();
   const [theme, setTheme] = useState<string>("");
 
-  if (themes) {
-    console.log(themes);
-  }
-
   useEffect(() => {
     if (themes) {
       setTheme(Object.keys(themes)[0]);
@@ -19,27 +15,38 @@ const page = () => {
   }, [themes]);
 
   return (
-    <div className="flex flex-col items-center py-16 gap-4">
+    <div
+      className={`flex flex-col items-center py-16 gap-4
+        ${theme === "soft-neutral" && "bg-slate-50 text-slate-900"}
+        ${theme === "sage" && "bg-stone-50 text-stone-900"}
+        ${theme === "dark" && "bg-slate-900 text-slate-50"}
+        ${theme === "pastel-blue" && "bg-sky-50 text-slate-900"}
+        ${theme === "soft-pink" && "bg-rose-50 text-zinc-900"}
+        ${theme === "warm-mono" && "bg-amber-50 text-stone-900"}
+    `}>
       {themes && !loading && !error && (
-        <select className="text-black">
+        <select
+          className={`text-black border-2 border-slate-400 rounded-full px-2 capitalize bg-white`}
+          onChange={(e) => {
+            setTheme(e.target.value);
+          }}>
           {Object.keys(themes).map((el) => (
             <option value={el} key={el}>
-              {el}
+              {el.replace("-", " ")}
             </option>
           ))}
         </select>
       )}
 
-      <p className="bg-white rounded-full w-8 h-8 text-black flex items-center justify-center">
+      <p className="bg-white rounded-full w-32 h-32 text-black flex items-center justify-center">
         img
       </p>
-      <p>loremipsum</p>
+
+      <p className="font-bold">Lorem User Ipsum</p>
 
       {themes && Object.keys(themes).length > 0 && (
         <>
-          <Link accent={themes[theme].accent} />
-          <Link accent={themes[theme].accent} />
-          <Link accent={themes[theme].accent} />
+          <Link theme={theme} />
         </>
       )}
     </div>
