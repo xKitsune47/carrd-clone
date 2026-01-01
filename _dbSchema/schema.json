@@ -1,0 +1,81 @@
+{
+  "collections": {
+    "users.profiles": {
+      "ns": "users.profiles",
+      "jsonSchema": {
+        "bsonType": "object",
+        "properties": {
+          "id": {
+            "bsonType": [
+              "objectId"
+            ]
+          },
+          "userId": {
+            "bsonType": [
+              "int"
+            ]
+          },
+          "links": {
+            "bsonType": "array",
+            "items": {}
+          },
+          "description": {
+            "bsonType": "string"
+          }
+        }
+      }
+    },
+    "users.users": {
+      "ns": "users.users",
+      "jsonSchema": {
+        "bsonType": "object",
+        "properties": {
+          "id": {
+            "bsonType": [
+              "objectId"
+            ]
+          },
+          "picture": {
+            "bsonType": "string"
+          },
+          "mail": {
+            "bsonType": "string"
+          },
+          "username": {
+            "bsonType": "string"
+          },
+          "createdAt": {
+            "bsonType": [
+              "date"
+            ]
+          },
+          "password": {
+            "bsonType": "string"
+          }
+        }
+      }
+    }
+  },
+  "relationships": [
+    {
+      "id": "09d5e639-9aaf-4c25-8272-e86f0ecaac1a",
+      "relationship": [
+        {
+          "ns": "users.profiles",
+          "cardinality": 1,
+          "fields": [
+            "userId"
+          ]
+        },
+        {
+          "ns": "users.users",
+          "cardinality": 1,
+          "fields": [
+            "id"
+          ]
+        }
+      ],
+      "isInferred": false
+    }
+  ]
+}

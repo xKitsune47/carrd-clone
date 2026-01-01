@@ -1,0 +1,32 @@
+{
+  "soft-neutral": {
+    "name": "Inter",
+    "tailwind": "font-sans",
+    "googleFont": "Inter"
+  },
+  "sage": {
+    "name": "Source Sans 3",
+    "tailwind": "font-sans",
+    "googleFont": "Source Sans 3"
+  },
+  "dark": {
+    "name": "Manrope",
+    "tailwind": "font-sans",
+    "googleFont": "Manrope"
+  },
+  "pastel-blue": {
+    "name": "DM Sans",
+    "tailwind": "font-sans",
+    "googleFont": "DM Sans"
+  },
+  "soft-pink": {
+    "name": "Poppins",
+    "tailwind": "font-sans",
+    "googleFont": "Poppins"
+  },
+  "warm-mono": {
+    "name": "IBM Plex Sans",
+    "tailwind": "font-sans",
+    "googleFont": "IBM Plex Sans"
+  }
+}
