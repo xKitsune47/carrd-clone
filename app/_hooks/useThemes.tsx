@@ -1,18 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { simulateLoading } from "../_helpers/simulateLoading";
 
 const useThemes = () => {
   const [themes, setThemes] = useState(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [loadingThemes, setLoading] = useState<boolean>(true);
+  const [errorThemes, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchThemes = async () => {
       try {
         setLoading(true);
-        const res = await fetch("/api/theme-preview");
+        const res = await fetch("/api/theme-preview?query=colors");
+
+        if (!res.ok) {
+          throw new Error("Could not load themes");
+        }
+
         const data = await res.json();
+
         setThemes(data.themes);
       } catch (err) {
         console.error(err);
@@ -25,7 +32,7 @@ const useThemes = () => {
     fetchThemes();
   }, []);
 
-  return { themes, loading, error };
+  return { themes, loadingThemes, errorThemes };
 };
 
 export default useThemes;

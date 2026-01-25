@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carrd Clone
+
+A link-in-bio application that allows users to create personalized profile pages with custom themes, fonts, and links.
+
+## What This App Does
+
+- **User Authentication**: OAuth login with Google and GitHub using NextAuth
+- **Custom Profile Pages**: Create a personalized page at `/{username}` with profile image, description, and links
+- **Theme Customization**: Choose from 6 different color themes (soft-neutral, sage, dark, pastel-blue, soft-pink, warm-mono)
+- **Font Selection**: Pick from 6 Google Fonts (Inter, Source Sans 3, Manrope, DM Sans, Poppins, IBM Plex Sans)
+- **Link Management**: Add, edit, and reorder multiple links on your profile
+- **Image Upload**: Upload custom profile images or use image URLs
+- **Theme Preview**: Test different themes and fonts before applying them
+
+## Technologies Used
+
+### Frontend
+
+- **Next.js 16.1.1** - React framework with App Router
+- **React 19.2.3** - UI library
+- **TypeScript 5** - Type safety
+- **Tailwind CSS 4** - Styling
+- **Redux Toolkit 2.11.2** - State management for themes/fonts
+
+### Backend
+
+- **NextAuth v5 (beta)** - Authentication with OAuth providers
+- **MongoDB** - Database for storing user pages
+- **Mongoose 9.0.2** - MongoDB object modeling
+
+### Other
+
+- **Google Fonts** - Typography
+- **FileReader API** - Client-side image processing (base64 encoding)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file with:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `MONGO_CONN_STRING` - MongoDB connection string
+- `AUTH_SECRET` - NextAuth secret
+- `AUTH_GOOGLE_ID` - Google OAuth client ID
+- `AUTH_GOOGLE_SECRET` - Google OAuth client secret
+- `AUTH_GITHUB_ID` - GitHub OAuth client ID
+- `AUTH_GITHUB_SECRET` - GitHub OAuth client secret
