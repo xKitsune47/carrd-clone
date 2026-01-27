@@ -21,7 +21,7 @@ export interface IUserPage extends Document {
 }
 
 export async function getNextUserId(): Promise<number> {
-  const counter = await Counter.findByIdAndUpdate(
+  const counter = await Counter.findOneAndUpdate(
     { _id: "userId" },
     { $inc: { seq: 1 } },
     { new: true, upsert: true },

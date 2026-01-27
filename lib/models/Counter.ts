@@ -1,10 +1,12 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-export interface ICounter extends Document {
+export interface ICounter {
+  _id: string;
   seq: number;
 }
 
 const CounterSchema = new Schema<ICounter>({
+  _id: { type: String, required: true },
   seq: { type: Number, default: 0 },
 });
 

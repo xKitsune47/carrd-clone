@@ -1,0 +1,4 @@
+# Ignore formatting for these files
+.dockerignore
+.gitignore
+*.md
