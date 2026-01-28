@@ -1,4 +1,6 @@
-# Carrd Clone
+# Kitsune's Links
+Check demo or even use it at:
+https://links.kitsune-dev.me/
 
 A link-in-bio application that allows users to create personalized profile pages with custom themes, fonts, and links.
 
