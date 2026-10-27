@@ -11,10 +11,10 @@ const Footer = () => {
     <ThemeWrapper style={baseStyles}>
       Created by
       <a
-        href="https://kitsune-dev.me"
+        href="https://ninefox.dev
         target="_blank"
         className="text-orange-600 font-bold hover:scale-102 duration-300">
-        kitsune-dev.me
+        ninefox.dev
       </a>
     </ThemeWrapper>
   );
